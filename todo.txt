@@ -1,0 +1,13 @@
+buy (login-home, new order)
+signin
+resetpassword
+orders
+account
+services
+addfunds
+api
+signup done
+tickets (support) done
+child-panel done
+mass-order done
+updates done

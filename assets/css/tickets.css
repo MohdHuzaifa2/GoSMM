@@ -1,0 +1,81 @@
+.subject-selectors-container {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+.subject-selector {
+    border-radius: 12px;
+    flex-grow: 1;
+    flex-shrink: 0;
+    padding: 8px 16px;
+    text-align: center;
+    background: white;
+}
+
+.subject-selector a, .subject-selector a:link, .subject-selector a:visited {
+    color: var(--primary-color);
+    text-decoration: none;
+}
+
+.subject-selector.active {
+    background: var(--primary-color);
+    color: white;
+}
+
+.subject-selector.active a,
+.subject-selector.active a:link,
+.subject-selector.active a:visited {
+    color: white;
+}
+
+textarea#message {
+    resize: vertical;
+    font-family: inherit;
+    font-size: 15px;
+    outline: none;
+    min-height: 100px !important;
+    height: auto;
+    flex-shrink: 0;
+}
+
+.files-label {
+    cursor: pointer;
+}
+
+.submit-btn {
+    flex: 1 0 100%;
+}
+
+.btn-search {
+    background: #8700ff;
+    color: #fff;
+    border-radius: 12px !important;
+    padding: 15px;
+    padding-bottom: 10px;
+    border: none;
+    outline: none;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.btn-search ion-icon {
+    --ionicon-stroke-width: 72px;
+}
+
+th:nth-child(2) {
+    min-width: 120px;
+}
+
+.userwrap {
+    display: block;
+}
+
+@media screen and (min-width: 992px) {
+    .userwrap {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        column-gap: 16px;
+    }
+}
