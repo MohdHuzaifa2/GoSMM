@@ -4,14 +4,58 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tickets</title>
+    <title>API - GoSMM</title>
     <link rel="shortcut icon" type="image/ico" href="https://cdn.mypanel.link/43qlom/jzq3kexw5q5cqpg5.png">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
         integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="./styles.css">
-    <link rel="stylesheet" href="./assets/css/tickets.css">
+    <style>
+        .width-40 {
+            width: 40%;
+            min-width: 250px;
+        }
 
+        .nav-pills {
+            list-style: none;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .nav-pills li {
+            text-align: center;
+            flex: 1 1 auto;
+        }
+
+        .nav-pills a {
+            width: 100%;
+            display: block;
+            text-decoration: none;
+            text-align: center;
+            padding: 8px 16px;
+            border-radius: 12px;
+            background: white;
+        }
+
+        .card {
+            overflow: hidden;
+        }
+
+        .card-header {
+            background: var(--primary-color);
+            color: white;
+            font-size: calc(1.275rem + 0.3vw);
+        }
+
+        .card-header + .table {
+            margin-bottom: 16px;
+        }
+
+        .example-code {
+            padding: 16px;
+        }
+    </style>
 </head>
 
 <body>
@@ -45,7 +89,7 @@
                     Add funds
                 </a>
             </li>
-            <li class="nav-item ">
+            <li class="nav-item active">
                 <a class="nav-link" href="./api.html">
                     <i class="navbar-icon fas fa-link"></i>
                     API
@@ -57,7 +101,7 @@
                     Child panel
                 </a>
             </li>
-            <li class="nav-item  active">
+            <li class="nav-item ">
                 <a class="nav-link" href="./tickets.html">
                     <i class="navbar-icon fas fa-ticket-alt"></i>
                     Help
@@ -104,6 +148,7 @@
             </ul>
         </div>
 
+
         <button class="hamburgerbtn">
             <span class="icon icon1"></span>
             <span class="icon icon2"></span>
@@ -113,122 +158,87 @@
     <main>
         <div class="userwrap">
             <section class="col">
-                <div class="card subject-selectors">
-                    <h2>Subject</h2>
-                    <div class="subject-selectors-container">
-                        <div class="subject-selector active">
-                            <a href="#">Order</a>
-                        </div>
-                        <div class="subject-selector">
-                            <a href="#">Payment</a>
-                        </div>
-                        <div class="subject-selector">
-                            <a href="#">Other</a>
-                        </div>
+                <div class="card" style="overflow: auto;">
+                    <table class="table" style="margin: 0; ">
+                        <tbody>
+                            <tr>
+                                <td class="width-40">HTTP Method</td>
+                                <td>POST</td>
+                            </tr>
+                            <tr>
+                                <td>API URL</td>
+                                <td>https://gosmm.in/api/v2</td>
+                            </tr>
+                            <tr>
+                                <td>API Key</td>
+                                <td>Get an API key on the <a href="https://gosmm.in/account.html">Account</a> page</td>
+                            </tr>
+                            <tr>
+                                <td>Response format</td>
+                                <td>JSON</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <ul class="nav-pills">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#Service list">Service list</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#Add order">Add order</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#Order status">Order status</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#Multiple orders status">Multiple orders status</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#Create refill">Create refill</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#Create multiple refill">Create multiple refill</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#Get refill status">Get refill status</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#Get multiple refill status">Get multiple refill status</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#Create cancel">Create cancel</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#User balance">User balance</a>
+                    </li>
+                </ul>
+                <div class="card" style="padding: 0;">
+                    <div class="card-header" style="margin-bottom: 0;">
+                        <h4>Service list</h4>
+                    </div>
+                    <table class="table">
+                        <thead class="table-header">
+                            <tr>
+                                <td>Parameters</td>
+                                <td>Description</td>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>key</td>
+                                <td>Your API key</td>
+                            </tr>
+                            <tr>
+                                <td>action</td>
+                                <td>services</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <div class="example-code">
+                        <strong>Example response</strong>
+
                     </div>
                 </div>
-                <div class="card subject-forms">
-                    <form action="#">
-                        <div class="form-group">
-                            <label for="orderID">Order ID : [For multiple orders, please separate them using
-                                comma]</label>
-                            <input type="text" id="orderID" class="form-input">
-                        </div>
-                        <div class="form-group">
-                            <label for="request">Request</label>
-                            <select name="request" id="request" class="form-input">
-                                <option value="Refill">Refill</option>
-                                <option value="Speed Up">Speed Up</option>
-                                <option value="Cancel">Cancel</option>
-                                <option value="Not started">Not started</option>
-                                <option value="Mark as completed without done">Mark as completed without done</option>
-                                <option value="Other">Other</option>
-                            </select>
-                        </div>
-                        <div class="form-group">
-                            <label for="message">Message (Optional)</label>
-                            <textarea name="message" id="message" class="form-input" rows="4" cols="50"></textarea>
-                        </div>
-                        <div class="form-group" style="flex-direction: row; align-items: center; padding: 0 5px;">
-                            <a href="#" onclick="event.preventDefault()" class="paperclip"
-                                style="display: flex;align-items: center;justify-content: center;">
-                                <svg width="24px" height="24px" fill="currentColor" viewBox="0 0 24 24" version="1.1"
-                                    xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-                                    <title>paperclip</title>
-                                    <g id="paperclip" stroke="none" stroke-width="1" fill-rule="evenodd">
-                                        <path
-                                            d="M15.4604059,6.38639442 C14.683645,5.60296995 13.4230004,5.60296995 12.6462396,6.38639442 L6.78869877,12.2941855 C5.44846797,13.6459138 5.44846797,15.8356494 6.78869877,17.1873777 C8.12892957,18.539106 10.3000398,18.539106 11.6402706,17.1873777 L16.4791086,12.3070285 C16.8261043,11.9570561 17.3927577,11.9570561 17.7397533,12.3070285 C18.0867489,12.657001 18.0867489,13.2285155 17.7397533,13.5784879 L12.9009152,18.4588371 C10.8635097,20.513721 7.56545961,20.513721 5.52805412,18.4588371 C3.49064863,16.4039532 3.49064863,13.07761 5.52805412,11.0227261 L11.3855949,5.11493503 C12.8595304,3.62835499 15.247115,3.62835499 16.7210505,5.11493503 C18.1949861,6.60151508 18.1949861,9.0095821 16.7210505,10.4961621 L11.1181854,16.1470928 C10.2077199,17.065369 8.73060088,17.065369 7.8201353,16.1470928 C6.90966972,15.2288165 6.90966972,13.7390257 7.8201353,12.8207495 L12.4042977,8.19726082 C12.7512933,7.84728842 13.3179467,7.84728842 13.6649423,8.19726082 C14.0119379,8.54723323 14.0119379,9.11874781 13.6649423,9.46872021 L9.08077994,14.0922089 C8.86748906,14.3073296 8.86748906,14.6605127 9.08077994,14.8756334 C9.29407083,15.090754 9.6442499,15.090754 9.85754079,14.8756334 L15.4604059,9.22470275 C16.2371667,8.44127828 16.2371667,7.16981889 15.4604059,6.38639442 Z"
-                                            id="Path" fill-rule="nonzero"></path>
-                                    </g>
-                                </svg>
-                            </a>
-                            <span class="files-label">Attach files</span>
-                        </div>
-                        <button type="submit" class="btn-primary submit-btn">Submit ticket</button>
-                    </form>
-                </div>
-            </section>
-            <section class="col">
-                <form action="#" class="history-search">
-                    <div class="nav-pills">
-                        <div class="input-group">
-                            <input type="text" class="form-input" value="" name="search" placeholder="Search">
-                            <button type="submit" class="btn-search">
-                                <ion-icon name="search-outline"></ion-icon>
-                            </button>
-                        </div>
-                    </div>
-                    <div class="card" style="padding: 0; border-radius: 20px; overflow: auto;">
-                        <table class="table">
-                            <thead>
-                                <tr class="table-header">
-                                    <th>ID</th>
-                                    <th>Subject</th>
-                                    <th>Status</th>
-                                    <th class="nowrap">Last update</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>2873</td>
-                                    <td><a href="#">My order not start please check</a></td>
-                                    <td>Pending</td>
-                                    <td><span class="nowrap">1 August 2024 at 1:07 PM</span></td>
-                                </tr>
-                                <tr>
-                                    <td>1642</td>
-                                    <td><a href="#">Order is pending still</a></td>
-                                    <td>Pending</td>
-                                    <td><span class="nowrap">23 February 2024 at 11:43 PM</span></td>
-                                </tr>
-                                <tr>
-                                    <td>1064</td>
-                                    <td><a href="#">My order not started yet</a></td>
-                                    <td>Pending</td>
-                                    <td><span class="nowrap">22 September 2023 at 8:31 AM</span></td>
-                                </tr>
-                                <tr>
-                                    <td>766</td>
-                                    <td><a href="#">401381 this order not started yet</a></td>
-                                    <td>Closed</td>
-                                    <td><span class="nowrap">7 April 2023 at 9:14 AM</span></td>
-                                </tr>
-                                <tr>
-                                    <td>764</td>
-                                    <td><a href="#">401379 order I'd cancel</a></td>
-                                    <td>Closed</td>
-                                    <td><span class="nowrap">7 April 2023 at 12:59 AM</span></td>
-                                </tr>
-                                <tr>
-                                    <td>760</td>
-                                    <td><a href="#">Money not credit in my pannel</a></td>
-                                    <td>Closed</td>
-                                    <td><span class="nowrap">6 April 2023 at 12:53 AM</span></td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                </form>
             </section>
         </div>
     </main>
@@ -336,16 +346,6 @@
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
     <script src="./script.js"></script>
-    <script>
-        let subjectSelector = document.querySelectorAll(".subject-selector");
-
-        subjectSelector.forEach(ss => {
-            ss.addEventListener('click', () => {
-                subjectSelector.forEach(item => item.classList.remove("active"));
-                ss.classList.add("active");
-            })
-        })
-    </script>
 </body>
 
 </html>

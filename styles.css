@@ -182,7 +182,7 @@ button.hamburgerbtn.toggled span.icon.icon3 {
 
 .dropdown.profdd button img {
     max-width: 35px;
-    filter: hue-rotate(225deg) saturate(2.0) brightness(0.98);
+    border-radius: 50%;
     vertical-align: middle;
 }
 
@@ -424,6 +424,41 @@ td, th {
     overflow: auto;
 }
 
+ul.pagination {
+    display: flex;
+    padding-left: 0;
+    list-style: none;
+    margin-top: -8px;
+}
+
+.active>.page-link {
+    z-index: 3;
+    color: white;
+    background: var(--primary-color);
+    border-color: var(--primary-color);
+}
+
+.page-link {
+    position: relative;
+    display: block;
+    padding: 6px 12px;
+    font-size: 16px;
+    color: var(--primary-color);
+    text-decoration: none;
+    background-color: #fff;
+    border: 1px solid #dee2e6;
+    transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+    border-radius: inherit;
+}
+
+.page-item:first-child .page-link {
+    border-radius: 6px 0 0 6px !important;
+}
+
+.page-item:last-child .page-link {
+    border-radius: 0 6px 6px 0 !important;
+}
+
 .sidebarhead {
     display: flex;
     flex-direction: row;
@@ -514,7 +549,7 @@ ul.sidebarul li.active a i {
 
 .profilesb img {
     max-width: 60px;
-    filter: hue-rotate(225deg) saturate(2.0) brightness(0.98);
+    border-radius: 50%;
 }
 
 .profilesb p {
