@@ -476,7 +476,7 @@ ul.pagination {
 }
 
 button.headbtn.currenbtn {
-    background: url(https://cdn.mypanel.link/mojze1/ctxfz43yebwsuq7s.png);
+    background: url(./assets/images/currency.png);
     background-size: 105%;
     background-position: left;
     text-align: right;
@@ -484,7 +484,7 @@ button.headbtn.currenbtn {
 }
 
 button.headbtn.langbtn {
-    background: url(https://cdn.mypanel.link/mojze1/aaphbc14qcyuhb25.png);
+    background: url(./assets/images/language.png);
     background-size: 105%;
     background-position: left;
     text-align: right;
@@ -622,6 +622,7 @@ ul.sidebarul li:not(.active) a:hover {
 }
 
 .bottom-nav .col a {
+    display: block;
     color: #8700ff;
     text-decoration: none;
 }
