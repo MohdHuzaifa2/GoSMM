@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Account - GoSMM</title>
+  <link rel="shortcut icon" type="image/ico" href="https://cdn.mypanel.link/43qlom/jzq3kexw5q5cqpg5.png">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+    integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="./styles.css">
+  <style>
+    .nav-pills {
+      list-style: none;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .nav-pills li {
+      text-align: center;
+    }
+
+    .nav-pills a {
+      width: 100%;
+      display: block;
+      text-decoration: none;
+      text-align: center;
+      padding: 8px 16px;
+      border-radius: 12px;
+      background: white;
+    }
+
+    .nav-pills li a.active {
+      background: var(--primary-color);
+      color: white;
+    }
+
+    @media screen and (min-width: 992px) {
+      .nav-pills {
+        grid-column: span 2;
+      }
+      .userwrap {
+        display: grid;
+        column-gap: 16px;
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="sidebar">
+    <div class="sidebarhead">
+      <button class="headbtn currenbtn">Currency</button>
+      <button class="headbtn langbtn">Language</button>
+    </div>
+    <ul class="sidebarul">
+      <li class="nav-item ">
+        <a class="nav-link" href="./buy.html">
+          <i class="navbar-icon fas fa-cart-plus"></i>
+          New order
+        </a>
+      </li>
+      <li class="nav-item ">
+        <a class="nav-link" href="./services.html">
+          <i class="navbar-icon fas fa-clipboard"></i>
+          Services
+        </a>
+      </li>
+      <li class="nav-item ">
+        <a class="nav-link" href="./orders.html">
+          <i class="navbar-icon fas fa-book"></i>
+          Orders History
+        </a>
+      </li>
+      <li class="nav-item ">
+        <a class="nav-link" href="./addfunds.html">
+          <i class="navbar-icon fas fa-wallet"></i>
+          Add funds
+        </a>
+      </li>
+      <li class="nav-item ">
+        <a class="nav-link" href="./api.html">
+          <i class="navbar-icon fas fa-link"></i>
+          API
+        </a>
+      </li>
+      <li class="nav-item ">
+        <a class="nav-link" href="./child-panel.html">
+          <i class="navbar-icon fas fa-project-diagram"></i>
+          Child panel
+        </a>
+      </li>
+      <li class="nav-item ">
+        <a class="nav-link" href="./tickets.html">
+          <i class="navbar-icon fas fa-ticket-alt"></i>
+          Help
+        </a>
+      </li>
+      <li class="nav-item ">
+        <a class="nav-link" href="./massorder.html">
+          <i class="navbar-icon fas fa-swatchbook"></i>
+          Mass order
+        </a>
+      </li>
+      <li class="nav-item ">
+        <a class="nav-link" href="./updates.html">
+          <i class="navbar-icon fas fa-burn"></i>
+          Updates
+        </a>
+      </li>
+    </ul>
+    <div class="profilesb">
+      <img src="https://cdn.mypanel.link/43qlom/36ayc0fgmdzg8nfg.webp">
+      <div>
+        <p>asifkk</p>
+        <small><b>$1.91569</b></small>
+      </div>
+      <a href="./account.html"><i class="fas fa-cog"></i></a>
+    </div>
+  </div>
+  <nav class="navbar">
+    <a href="./" class="navbar-brand">
+      <img src="https://cdn.mypanel.link/43qlom/e33x4agh2q39okez.png" alt="gosmm.in Future Of Your Social Profile"
+        title="GoSMM Landing Page">
+    </a>
+
+    <div class="dropdown profdd">
+      <button class="btn btn-secondary dropdown-toggle show" type="button" data-bs-toggle="dropdown"
+        aria-expanded="true">
+        <img src="https://cdn.mypanel.link/43qlom/36ayc0fgmdzg8nfg.webp">
+      </button>
+      <ul class="dropdown-menu sho\w" data-bs-popper="static">
+        <li><a class="dropdown-item" href="./account.html"><i class="fas fa-user-alt"></i> Accounts</a></li>
+        <li><a class="dropdown-item" href="./addfunds.html"><i class="fas fa-wallet"></i> Add funds</a></li>
+        <li><a class="dropdown-item" href="./tickets.html"><i class="fas fa-life-ring"></i> Support</a></li>
+        <li><a class="dropdown-item" href="./logout.html"><i class="fas fa-sign-out-alt"></i> Logout</a></li>
+      </ul>
+    </div>
+
+
+    <button class="hamburgerbtn">
+      <span class="icon icon1"></span>
+      <span class="icon icon2"></span>
+      <span class="icon icon3"></span>
+    </button>
+  </nav>
+  <main>
+    <div class="userwrap">
+      <ul class="nav-pills">
+        <li class="nav-item">
+          <a class="nav-link active" href="/account.html">General</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/notifications.html">Notifications</a>
+        </li>
+      </ul>
+      <section class="col">
+        <div class="card">
+          <form action="./account.html">
+            <div class="form-group">
+              <label for="username" class="form-label">Username</label>
+              <input type="text" class="form-input" id="username" value="asifkk">
+            </div>
+            <div class="form-group">
+              <label for="email" class="form-label">Email</label>
+              <input type="email" class="form-input" id="email" value="asifshera7865@gmail.com">
+            </div>
+            <button type="submit" class="btn-primary">Change email</button>
+          </form>
+        </div>
+        <div class="card">
+          <form action="./account.html">
+            <div class="form-group">
+              <label for="current-password" class="form-label">Current Password</label>
+              <input type="password" class="form-input" id="current-password">
+            </div>
+            <div class="form-group">
+              <label for="new-password" class="form-label">New Password</label>
+              <input type="password" class="form-input" id="new-password">
+            </div>
+            <div class="form-group">
+              <label for="confirm-new-password" class="form-label">Confirm New Password</label>
+              <input type="password" class="form-input" id="confirm-new-password">
+            </div>
+            <button type="submit" class="btn-primary" style="align-self: flex-start;">Change password</button>
+          </form>
+        </div>
+      </section>
+      <section class="col">
+        <div class="card">
+          <form action="./account.html">
+            <div class="form-group">
+              <label for="" class="form-label">Two-factor authentication</label>
+              <p style="font-size: 14px;">Email-based option to add an extra layer of protection to your account. When signing in you'll need to enter a code that will be sent to your email address.</p>
+            </div>
+            <button type="submit" class="btn-primary" style="align-self: flex-start;">Enable</button>
+          </form>
+        </div>
+        <div class="card">
+          <form action="./account.html">
+            <div class="form-group">
+              <label for="timezone" class="form-label">Timezone</label>
+              <select name="timezone" id="timezone" class="form-input">
+                <option value="-43200">(UTC -12:00) Baker/Howland Island</option>
+                <option value="-39600">(UTC -11:00) Niue</option>
+                <option value="-36000">(UTC -10:00) Hawaii-Aleutian Standard Time, Cook Islands, Tahiti</option>
+                <option value="-34200">(UTC -9:30) Marquesas Islands</option>
+                <option value="-32400">(UTC -9:00) Alaska Standard Time, Gambier Islands</option>
+                <option value="-28800">(UTC -8:00) Pacific Standard Time, Clipperton Island</option>
+                <option value="-25200">(UTC -7:00) Mountain Standard Time</option>
+                <option value="-21600">(UTC -6:00) Central Standard Time</option>
+                <option value="-18000">(UTC -5:00) Eastern Standard Time, Western Caribbean Standard Time</option>
+                <option value="-16200">(UTC -4:30) Venezuelan Standard Time</option>
+                <option value="-14400">(UTC -4:00) Atlantic Standard Time, Eastern Caribbean Standard Time</option>
+                <option value="-12600">(UTC -3:30) Newfoundland Standard Time</option>
+                <option value="-10800">(UTC -3:00) Argentina, Brazil, French Guiana, Uruguay</option>
+                <option value="-7200">(UTC -2:00) South Georgia/South Sandwich Islands</option>
+                <option value="-3600">(UTC -1:00) Azores, Cape Verde Islands</option>
+                <option value="0">(UTC) Greenwich Mean Time, Western European Time</option>
+                <option value="3600">(UTC +1:00) Central European Time, West Africa Time</option>
+                <option value="7200">(UTC +2:00) Central Africa Time, Eastern European Time, Kaliningrad Time</option>
+                <option value="10800">(UTC +3:00) Moscow Time, East Africa Time, Arabia Standard Time</option>
+                <option value="12600">(UTC +3:30) Iran Standard Time</option>
+                <option value="14400">(UTC +4:00) Azerbaijan Standard Time, Samara Time</option>
+                <option value="16200">(UTC +4:30) Afghanistan</option>
+                <option value="18000">(UTC +5:00) Pakistan Standard Time, Yekaterinburg Time</option>
+                <option value="19800" selected="">(UTC +5:30) Indian Standard Time, Sri Lanka Time</option>
+                <option value="20700">(UTC +5:45) Nepal Time</option>
+                <option value="21600">(UTC +6:00) Bangladesh Standard Time, Bhutan Time, Omsk Time</option>
+                <option value="23400">(UTC +6:30) Cocos Islands, Myanmar</option>
+                <option value="25200">(UTC +7:00) Krasnoyarsk Time, Cambodia, Laos, Thailand, Vietnam</option>
+                <option value="28800">(UTC +8:00) Australian Western Standard Time, Beijing Time, Irkutsk Time</option>
+                <option value="31500">(UTC +8:45) Australian Central Western Standard Time</option>
+                <option value="32400">(UTC +9:00) Japan Standard Time, Korea Standard Time, Yakutsk Time</option>
+                <option value="34200">(UTC +9:30) Australian Central Standard Time</option>
+                <option value="36000">(UTC +10:00) Australian Eastern Standard Time, Vladivostok Time</option>
+                <option value="37800">(UTC +10:30) Lord Howe Island</option>
+                <option value="39600">(UTC +11:00) Srednekolymsk Time, Solomon Islands, Vanuatu</option>
+                <option value="41400">(UTC +11:30) Norfolk Island</option>
+                <option value="43200">(UTC +12:00) Fiji, Gilbert Islands, Kamchatka Time, New Zealand Standard Time</option>
+                <option value="45900">(UTC +12:45) Chatham Islands Standard Time</option>
+                <option value="46800">(UTC +13:00) Samoa Time Zone, Phoenix Islands Time, Tonga</option>
+                <option value="50400">(UTC +14:00) Line Islands</option>
+              </select>
+            </div>
+            <button type="submit" class="btn-primary" style="align-self: flex-start;">Save</button>
+          </form>
+        </div>
+      </section>
+    </div>
+  </main>
+  <footer class="footer">
+    <div class="footer-container">
+      <div class="footer-col footer-brand">
+        <img src="https://cdn.mypanel.link/43qlom/e33x4agh2q39okez.png" alt="gosmm.in Future Of Your Social Profile"
+          title="">
+        <p style="font-weight: 300; font-size: 15px;"><b>GoSMM</b>: Your all-in-one SMM panel solution,
+          providing seamless social media management with a
+          user-friendly interface and powerful features.
+        </p>
+      </div>
+      <div class="footer-col footer-links-col">
+        <h3>Quick Links</h3>
+        <p>
+          <a href="./" class="footer-link">Home</a>
+        </p>
+        <p>
+          <a href="./signup.html" class="footer-link">Sign up</a>
+        </p>
+        <p>
+          <a href="./services.html" class="footer-link">Services</a>
+        </p>
+        <p>
+          <a href="./blog.html" class="footer-link">Blog</a>
+        </p>
+      </div>
+      <div class="footer-col footer-links-col">
+        <h3>Resources</h3>
+        <p>
+          <a href="./#faqSec" class="footer-link">FAQs</a>
+        </p>
+        <p>
+          <a href="./api.html" class="footer-link">API</a>
+        </p>
+      </div>
+      <div class="footer-col footer-links-col">
+        <h3>Contact with us</h3>
+        <p>Stay updated with our latest news and offers.</p>
+        <div class="social-links">
+          <a href="#" class="footer-icons">
+            <ion-icon name="logo-facebook"></ion-icon>
+          </a>
+          <a href="#" class="footer-icons">
+            <ion-icon name="logo-twitter"></ion-icon>
+          </a>
+          <a href="#" class="footer-icons">
+            <ion-icon name="logo-instagram"></ion-icon>
+          </a>
+          <a href="#" class="footer-icons">
+            <ion-icon name="logo-linkedin"></ion-icon>
+          </a>
+        </div>
+      </div>
+      <div class="footer-end">
+        <span>&copy; 2024
+          <a href="./" style="text-decoration: none;">GoSMM</a>
+          All rights reserved.
+        </span>
+      </div>
+    </div>
+  </footer>
+  <div class="bottom-nav">
+    <div class="bottom-nav-container">
+      <div class="row">
+        <!-- Option 1 -->
+        <div class="col">
+          <a href="./" class="text-decoration-none text-muted">
+            <i class="fas fa-box"></i>
+            <p class="mb-0 small">Order</p>
+          </a>
+        </div>
+        <!-- Option 2 -->
+        <div class="col">
+          <a href="./addfunds.html" class="text-decoration-none text-muted">
+            <i class="fas fa-wallet"></i>
+            <p class="mb-0 small">Wallet</p>
+          </a>
+        </div>
+        <!-- Option 3 -->
+        <div class="col">
+          <a href="./orders.html" class="text-decoration-none text-muted">
+            <i class="fas fa-redo-alt"></i>
+            <p class="mb-0 small">Orders</p>
+          </a>
+        </div>
+        <!-- Option 4 -->
+        <div class="col">
+          <a href="./tickets.html" class="text-decoration-none text-muted">
+            <i class="fas fa-comments"></i>
+            <p class="mb-0 small">Support</p>
+          </a>
+        </div>
+        <!-- Option 5 -->
+        <div class="col">
+          <a href="./account.html" class="text-decoration-none text-muted">
+            <i class="fas fa-user"></i>
+            <p class="mb-0 small">Profile</p>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+  <script src="./script.js"></script>
+</body>
+
+</html>

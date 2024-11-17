@@ -1,11 +1,13 @@
-buy (login-home, new order)
 signin
 resetpassword
-orders
-account
-services
-addfunds
-api
+blog done
+account done
+notifications done
+orders done
+buy (login-home, new order) done
+services done
+addfunds done
+api done
 signup done
 tickets (support) done
 child-panel done
