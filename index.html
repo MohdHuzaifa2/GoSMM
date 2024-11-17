@@ -35,7 +35,48 @@
             transform: translateY(-50%);
         }
 
+        .second-section {
+            padding: 30px 0;
+        }
+
+        .row {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 20px;
+        }
+
+        .stat-card {
+            padding: 10px;
+            display: flex;
+            gap: 10px;
+            background: linear-gradient(45deg, #ffffff, #ffffff, transparent);
+            background-size: 110%;
+            align-items: center;
+            border: 1px solid #ffffff20;
+            border-radius: 15px;
+            backdrop-filter: blur(10px);
+        }
+
+        .stat-card-img {
+            max-width: 70px;
+            border-radius: 15px;
+        }
+
+        .stat-card-body p {
+            text-transform: uppercase;
+            margin-bottom: 5px;
+        }
+
+        .stat-card-body h2 {
+            font-size: 30px;
+            line-height: 1;
+            font-weight: 800;
+        }
+
         @media screen and (min-width: 768px) {
+            .row {
+                grid-template-columns: repeat(3, 1fr);
+            }
 
             .card form {
                 flex-direction: row;
@@ -152,6 +193,33 @@
                     <img src="https://cdn.mypanel.link/43qlom/e33x4agh2q39okez.png">
                 </h3>
             </marquee>
+        </section>
+        <section class="second-section">
+            <div class="container">
+                <div class="row">
+                    <div class="stat-card">
+                        <img src="./assets/images/shopping bag.png" alt="Orders Completed" class="stat-card-img" width="70">
+                        <div class="stat-card-body">
+                            <p>Orders Completed</p>
+                            <h2>1573892</h2>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <img src="./assets/images/users.png" alt="Registered Users" class="stat-card-img" width="70">
+                        <div class="stat-card-body">
+                            <p>Registered Users</p>
+                            <h2>10473</h2>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <img src="./assets/images/money.png" alt="Prices Starting" class="stat-card-img" width="70">
+                        <div class="stat-card-body">
+                            <p>Prices Starting From</p>
+                            <h2>$0.002/1K</h2>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </section>
     </main>
     <footer class="footer">
