@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,6 +11,177 @@
         crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="./styles.css">
     <style>
+        .top-header {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 15px;
+            margin-bottom: 15px;
+        }
+
+        .welcome-box {
+            padding: 50px;
+            border-radius: 20px;
+            background: url(./assets/images/welcome-bg.png);
+            background-size: cover;
+            background-position: center;
+            color: white;
+            box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
+            border: 2px solid white;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .welcome-box h1 {
+            font-weight: 800;
+            font-size: calc(1.375rem + 1.5vw);
+        }
+
+        .welcome-box h1 span {
+            color: #d0b9ff;
+        }
+
+        .welcome-box h5 {
+            background: #ffffff20;
+            display: inline-block;
+            padding: 4px 10px;
+            font-size: 1rem;
+            border-radius: 6px;
+            font-weight: 500;
+            backdrop-filter: blur(3px);
+            border: 1px solid #ffffff10;
+        }
+
+        .welcome-box p {
+            color: #ffffff99;
+        }
+        
+        .stat-box-child {
+            padding: 20px;
+            background: #fff;
+            border-radius: 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            row-gap: 8px;
+            flex-grow: 1;
+            color: #212529;
+        }
+
+        .stat-box-head {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 16px;
+            font-weight: 500;
+        }
+
+        .stat-box-head i {
+            font-size: 16px;
+            background: var(--primary-color);
+            color: #fff;
+            padding: 6px;
+            border-radius: 8px;
+        }
+
+        .stat-box-child h5 {
+            font-size: 20px;
+        }
+
+        .stat-box-foot {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 14px;
+        }
+
+        .stat-box-foot a {
+            text-decoration: none;
+            padding: 3px 6px;
+            vertical-align: middle;
+            background: var(--primary-color);
+            color: white;
+            border-radius: 20px;
+        }
+
+        .stat-box-child > a {
+            text-decoration: none;
+            text-align: center;
+            margin-inline: -10px;
+        }
+
+        .telegram-box {
+            padding: 10px;
+            margin-top: 10px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: var(--primary-color);
+            background: white;
+            border-radius: 15px;
+        }
+
+        .telegram-box i {
+            background: var(--primary-color);
+            border-radius: 10px;
+            height: 30px;
+            width: 30px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #fff;
+        }
+
+        .telegram-box p {
+            line-height: 1.2;
+            font-weight: 600;
+            white-space: nowrap;
+        }
+
+        .help-box {
+            background: white;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            border-radius: 20px;
+        }
+
+        .help-box img {
+            width: 100%;
+            max-width: 250px;
+            align-self: flex-end;
+        }
+
+        .help-box-content {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 8px;
+            padding: 20px;
+        }
+
+        .help-box-content h3 {
+            font-weight: 600;
+            font-size: clamp(25px, 2vw, 32px);
+        }
+
+        .help-box-content p {
+            color: #595959;
+        }
+
+        .help-box-content a {
+            text-decoration: none;
+            text-align: center;
+        }
+
+        .balance-box {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
         ul.service-filter {
             display: flex;
             overflow: auto;
@@ -36,6 +208,24 @@
             border-radius: 5px;
             background: var(--primary-color);
             color: white;
+        }
+
+        .order-form {
+            padding: 16px;
+        }
+
+        #order-quantity {
+            border-bottom-left-radius: 0 !important;
+            border-bottom-right-radius: 0 !important;
+        }
+
+        .min-max-order {
+            margin-top: -8px;
+            padding: 2px 10px;
+            color: white;
+            background: var(--primary-color);
+            border-radius: 0 0 10px 10px;
+            text-align: center;
         }
 
         .nav-pills {
@@ -151,8 +341,12 @@
         .section-wrap {
             margin-top: 16px;
         }
-        
+
         @media screen and (min-width: 992px) {
+            .top-header {
+                grid-template-columns: 2fr 1fr 1fr;
+            }
+
             .section-wrap {
                 display: grid;
                 grid-template-columns: repeat(2, 1fr);
@@ -161,6 +355,7 @@
         }
     </style>
 </head>
+
 <body>
     <div class="sidebar">
         <div class="sidebarhead">
@@ -260,6 +455,41 @@
     </nav>
     <main>
         <div class="userwrap">
+            <div class="top-header">
+                <div class="welcome-box">
+                    <h1>Welcome to <span>GoSMM</span></h1>
+                    <h5>We are the Best SMM Panel</h5>
+                    <p>Welcome to our GoSMM! Elevate your social media presence with our fast, reliable, and affordable services. Whether you're looking to increase followers, likes, or engagement, we're here to help you succeed.</p>
+                </div>
+                <div class="help-box">
+                    <img src="./assets/images/doodle.png" alt="Help People" class="help-image" width="100%">
+                    <div class="help-box-content">
+                        <h3>Do you Need Help?</h3>
+                        <p>Contact our team to get the fastest and solution to all your problems 24x7.</p>
+                        <a href="#" class="btn-primary">Contact Us</a>
+                    </div>
+                </div>
+                <div class="balance-box">
+                    <div class="stat-box-child">
+                        <div class="stat-box-head">
+                            <i class="fas fa-wallet"></i>
+                            <span>Total balance</span>
+                        </div>
+                        <div>
+                            <h5>≈ ₹160.0008994</h5>
+                            <div class="stat-box-foot">
+                                <span>Change currency?</span>
+                                <a href="#">Change</a>
+                            </div>
+                        </div>
+                        <a href="./addfunds.html" class="btn-primary">Add Balance</a>
+                    </div>
+                    <div class="telegram-box">
+                        <i class="fab fa-telegram-plane"></i>
+                        <p>Join Our Telegram Channel</p>
+                    </div>
+                </div>
+            </div>
             <ul class="service-filter">
                 <li>
                     <button class="category-filter active">
@@ -341,7 +571,57 @@
                 </li>
             </ul>
             <div class="section-wrap">
-                <section class="col"></section>
+                <section class="col">
+                    <div class="card" style="padding: 0;">
+                        <div class="card-header" style="margin-bottom: 0;">
+                            <i class="fa-solid fa-cart-plus"></i>
+                            <b>New Order</b>
+                        </div>
+                        <form action="./buy.html" class="order-form">
+                            <div class="input-group" style="margin-bottom: 20px;">
+                                <input type="search" class="form-input" value="" name="search" placeholder="Search">
+                                <button type="submit" class="btn-search">
+                                    <ion-icon name="search-outline" role="img" class="md hydrated"></ion-icon>
+                                </button>
+                            </div>
+                            <div class="form-group">
+                                <label for="category" class="form-label">Category</label>
+                                <select name="category" id="category" class="form-input">
+                                    <option value="Whatsapp">Whatsapp</option>
+                                    <option value="Telegram">Telegram</option>
+                                    <option value="Telegram Premium">Telegram Premium</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="service" class="form-label">Service</label>
+                                <select name="service" id="service" class="form-input">
+                                    <option value="Whatsapp Channel Member 1">Whatsapp Channel Member 1</option>
+                                    <option value="Whatsapp Channel Member 2">Whatsapp Channel Member 2</option>
+                                    <option value="Whatsapp Channel Member 3">Whatsapp Channel Member 3</option>
+                                    <option value="Whatsapp Channel Member 4">Whatsapp Channel Member 4</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="link" class="form-label">Link</label>
+                                <input type="text" class="form-input" id="link">
+                            </div>
+                            <div class="form-group">
+                                <label for="order-quantity" class="form-label">Order Quantity</label>
+                                <input type="text" class="form-input" id="order-quantity">
+                                <small class="min-max-order">Min: 10 - Max: 3 000</small>
+                            </div>
+                            <div class="form-group">
+                                <label for="average-time" class="form-label">Average time</label>
+                                <input type="text" class="form-input" id="average-time" value="37 hours 39 minutes" readonly disabled>
+                            </div>
+                            <div class="form-group">
+                                <label for="charge" class="form-label">Charge</label>
+                                <input type="text" class="form-input" id="charge" readonly>
+                            </div>
+                            <input type="submit" class="btn-primary" value="Submit" style="align-self: flex-start;">
+                        </form>
+                    </div>
+                </section>
                 <section class="col">
                     <div class="card" style="padding: 0;">
                         <div class="card-header" style="margin-bottom: 0;">
@@ -415,65 +695,75 @@
                                 </thead>
                                 <tbody>
                                     <tr>
-                                        <td class="service-name"><span class="updtid">3559</span> Threads Likes | Cheapest +
+                                        <td class="service-name"><span class="updtid">3559</span> Threads Likes |
+                                            Cheapest +
                                             Slow</td>
                                         <td>2024-11-09</td>
                                         <td>Service disabled</td>
                                     </tr>
                                     <tr>
-                                        <td class="service-name"><span class="updtid">3396</span> Instagram Video Views [
+                                        <td class="service-name"><span class="updtid">3396</span> Instagram Video Views
+                                            [
                                             Max
                                             Unlimited ] | All Link | 𝐒𝐔𝐏𝐄𝐑 𝐅𝐀𝐒𝐓 𝐒𝐏𝐄𝐄𝐃 ⚡️</td>
                                         <td>2024-11-09</td>
                                         <td>Service disabled</td>
                                     </tr>
                                     <tr>
-                                        <td class="service-name"><span class="updtid">3937</span> 🚫 Telegram Channel Report
+                                        <td class="service-name"><span class="updtid">3937</span> 🚫 Telegram Channel
+                                            Report
                                             |
                                             Real Accounts Spam | Speed: 1K/Day | No Refill</td>
                                         <td>2024-11-09</td>
                                         <td>Service disabled</td>
                                     </tr>
                                     <tr>
-                                        <td class="service-name"><span class="updtid">3934</span> 🚫 Telegram Profile Report
+                                        <td class="service-name"><span class="updtid">3934</span> 🚫 Telegram Profile
+                                            Report
                                             Speed : 📍300-500/D - NoRefill -Real Accounts Spam ⛔</td>
                                         <td>2024-11-09</td>
                                         <td>Service disabled</td>
                                     </tr>
                                     <tr>
-                                        <td class="service-name"><span class="updtid">3935</span> 🚫 Telegram Group Report |
+                                        <td class="service-name"><span class="updtid">3935</span> 🚫 Telegram Group
+                                            Report |
                                             Speed : 📍300-500/D - NoRefill - Stable price ⛔</td>
                                         <td>2024-11-09</td>
                                         <td>Service disabled</td>
                                     </tr>
                                     <tr>
-                                        <td class="service-name"><span class="updtid">3915</span> 🚫 Facebook&nbsp;Report
+                                        <td class="service-name"><span class="updtid">3915</span> 🚫
+                                            Facebook&nbsp;Report
                                             Spam
                                             Account |Speed : 📍300-500/D - NoRefill - Stable price ⛔</td>
                                         <td>2024-11-09</td>
                                         <td>Service disabled</td>
                                     </tr>
                                     <tr>
-                                        <td class="service-name"><span class="updtid">3933</span> 🚫 Telegram Group Report
+                                        <td class="service-name"><span class="updtid">3933</span> 🚫 Telegram Group
+                                            Report
                                             |Speed : 📍300-500/D - NoRefill - Real Accounts Spam ⛔</td>
                                         <td>2024-11-09</td>
                                         <td>Service disabled</td>
                                     </tr>
                                     <tr>
-                                        <td class="service-name"><span class="updtid">3928</span> 🚫 Twitter Tweet Report
+                                        <td class="service-name"><span class="updtid">3928</span> 🚫 Twitter Tweet
+                                            Report
                                             |-Speed : 📍300-500/D - NoRefill - Real Accounts Spam ⛔</td>
                                         <td>2024-11-09</td>
                                         <td>Service disabled</td>
                                     </tr>
                                     <tr>
-                                        <td class="service-name"><span class="updtid">3936</span> 🚫 Telegram Account Report
+                                        <td class="service-name"><span class="updtid">3936</span> 🚫 Telegram Account
+                                            Report
                                             |
                                             Real Accounts Spam | Speed: 1K/Day | No Refill</td>
                                         <td>2024-11-09</td>
                                         <td>Service disabled</td>
                                     </tr>
                                     <tr>
-                                        <td class="service-name"><span class="updtid">3923</span> 🚫 YouTube Video Report |
+                                        <td class="service-name"><span class="updtid">3923</span> 🚫 YouTube Video
+                                            Report |
                                             Real
                                             Accounts Spam | Speed: 1K/Day | No Refill</td>
                                         <td>2024-11-09</td>
@@ -487,7 +777,8 @@
                                         <td>Service disabled</td>
                                     </tr>
                                     <tr>
-                                        <td class="service-name"><span class="updtid">3927</span> 🚫 Twitter User Report |
+                                        <td class="service-name"><span class="updtid">3927</span> 🚫 Twitter User Report
+                                            |
                                             -Speed : 📍300-500/D - NoRefill - Real Accounts Spam⛔</td>
                                         <td>2024-11-09</td>
                                         <td>Service disabled</td>
@@ -507,46 +798,53 @@
                                         <td>Service disabled</td>
                                     </tr>
                                     <tr>
-                                        <td class="service-name"><span class="updtid">3914</span> 🚫 Facebook Page Report |
+                                        <td class="service-name"><span class="updtid">3914</span> 🚫 Facebook Page
+                                            Report |
                                             Speed : 📍300-500/D - NoRefill - Stable price ⛔</td>
                                         <td>2024-11-09</td>
                                         <td>Service disabled</td>
                                     </tr>
                                     <tr>
-                                        <td class="service-name"><span class="updtid">3916</span> 🚫 Facebook Post Report |
+                                        <td class="service-name"><span class="updtid">3916</span> 🚫 Facebook Post
+                                            Report |
                                             Super Fast Speed | Speed: 1K/Day | No Refill</td>
                                         <td>2024-11-09</td>
                                         <td>Service disabled</td>
                                     </tr>
                                     <tr>
-                                        <td class="service-name"><span class="updtid">3918</span> 🚫 Facebook Page Report
+                                        <td class="service-name"><span class="updtid">3918</span> 🚫 Facebook Page
+                                            Report
                                             |Super
                                             Fast Speed | Speed: 1K/Day | No Refill</td>
                                         <td>2024-11-09</td>
                                         <td>Service disabled</td>
                                     </tr>
                                     <tr>
-                                        <td class="service-name"><span class="updtid">3913</span> 🚫 Facebook Post Report |
+                                        <td class="service-name"><span class="updtid">3913</span> 🚫 Facebook Post
+                                            Report |
                                             Speed : 📍300-500/D - NoRefill - Stable price ⛔</td>
                                         <td>2024-11-09</td>
                                         <td>Service disabled</td>
                                     </tr>
                                     <tr>
-                                        <td class="service-name"><span class="updtid">3917</span> 🚫 Facebook&nbsp;Report
+                                        <td class="service-name"><span class="updtid">3917</span> 🚫
+                                            Facebook&nbsp;Report
                                             Spam
                                             Account | Super Fast Speed | Speed: 1K/Day | No Refill</td>
                                         <td>2024-11-09</td>
                                         <td>Service disabled</td>
                                     </tr>
                                     <tr>
-                                        <td class="service-name"><span class="updtid">3930</span> 🚫 Telegram Profile Report
+                                        <td class="service-name"><span class="updtid">3930</span> 🚫 Telegram Profile
+                                            Report
                                             |
                                             {Speed : Slow } | {No Refill} | 🔥</td>
                                         <td>2024-11-09</td>
                                         <td>Service disabled</td>
                                     </tr>
                                     <tr>
-                                        <td class="service-name"><span class="updtid">3912</span> 🚫 Facebook&nbsp;Report
+                                        <td class="service-name"><span class="updtid">3912</span> 🚫
+                                            Facebook&nbsp;Report
                                             Spam
                                             Account | { Start : Instant} | {Speed : Slow } | {No Refill} | 🔥</td>
                                         <td>2024-11-09</td>
@@ -567,7 +865,8 @@
                                         <td>Service disabled</td>
                                     </tr>
                                     <tr>
-                                        <td class="service-name"><span class="updtid">3929</span> 🚫 Telegram Group Report |
+                                        <td class="service-name"><span class="updtid">3929</span> 🚫 Telegram Group
+                                            Report |
                                             {Speed : Slow } | {No Refill} | 🔥</td>
                                         <td>2024-11-09</td>
                                         <td>Service disabled</td>
@@ -579,39 +878,45 @@
                                         <td>Service disabled</td>
                                     </tr>
                                     <tr>
-                                        <td class="service-name"><span class="updtid">3926</span> 🚫 Twitter Tweet Report |
+                                        <td class="service-name"><span class="updtid">3926</span> 🚫 Twitter Tweet
+                                            Report |
                                             Start : Instant} | {Speed : Slow } | {No Refill} | 🔥</td>
                                         <td>2024-11-09</td>
                                         <td>Service disabled</td>
                                     </tr>
                                     <tr>
-                                        <td class="service-name"><span class="updtid">3910</span> 🚫 Facebook Post Report |{
+                                        <td class="service-name"><span class="updtid">3910</span> 🚫 Facebook Post
+                                            Report |{
                                             Start : Instant} | {Speed : Slow } | {No Refill} | 🔥</td>
                                         <td>2024-11-09</td>
                                         <td>Service disabled</td>
                                     </tr>
                                     <tr>
-                                        <td class="service-name"><span class="updtid">3925</span> 🚫 Twitter User Report |
+                                        <td class="service-name"><span class="updtid">3925</span> 🚫 Twitter User Report
+                                            |
                                             Start
                                             : Instant} | {Speed : Slow } | {No Refill} | 🔥</td>
                                         <td>2024-11-09</td>
                                         <td>Service disabled</td>
                                     </tr>
                                     <tr>
-                                        <td class="service-name"><span class="updtid">3931</span> 🚫 Telegram Account Report
+                                        <td class="service-name"><span class="updtid">3931</span> 🚫 Telegram Account
+                                            Report
                                             |
                                             {Speed : Slow } | {No Refill} | 🔥</td>
                                         <td>2024-11-09</td>
                                         <td>Service disabled</td>
                                     </tr>
                                     <tr>
-                                        <td class="service-name"><span class="updtid">3906</span> 🚫 Instagram Post Report |
+                                        <td class="service-name"><span class="updtid">3906</span> 🚫 Instagram Post
+                                            Report |
                                             Speed : 📍500/D - NoRefill - Stable price ⛔</td>
                                         <td>2024-11-09</td>
                                         <td>Service disabled</td>
                                     </tr>
                                     <tr>
-                                        <td class="service-name"><span class="updtid">3908</span> 🚫 Instagram Post Report |
+                                        <td class="service-name"><span class="updtid">3908</span> 🚫 Instagram Post
+                                            Report |
                                             Super Fast Speed | Speed: 1K/Day | No Refill</td>
                                         <td>2024-11-09</td>
                                         <td>Service disabled</td>
@@ -624,14 +929,16 @@
                                         <td>Service disabled</td>
                                     </tr>
                                     <tr>
-                                        <td class="service-name"><span class="updtid">3932</span> 🚫 Telegram Channel Report
+                                        <td class="service-name"><span class="updtid">3932</span> 🚫 Telegram Channel
+                                            Report
                                             |
                                             {Speed : Slow } | {No Refill} | 🔥</td>
                                         <td>2024-11-09</td>
                                         <td>Service disabled</td>
                                     </tr>
                                     <tr>
-                                        <td class="service-name"><span class="updtid">3911</span> 🚫 Facebook Page Report |
+                                        <td class="service-name"><span class="updtid">3911</span> 🚫 Facebook Page
+                                            Report |
                                             MQ
                                             1M |{ Start : Instant} | {Speed : Slow } | {No Refill} | 🔥</td>
                                         <td>2024-11-09</td>
@@ -645,52 +952,60 @@
                                         <td>Service disabled</td>
                                     </tr>
                                     <tr>
-                                        <td class="service-name"><span class="updtid">3559</span> Threads Likes | Cheapest +
+                                        <td class="service-name"><span class="updtid">3559</span> Threads Likes |
+                                            Cheapest +
                                             Slow</td>
                                         <td>2024-11-09</td>
                                         <td>Service enabled</td>
                                     </tr>
                                     <tr>
-                                        <td class="service-name"><span class="updtid">3396</span> Instagram Video Views [
+                                        <td class="service-name"><span class="updtid">3396</span> Instagram Video Views
+                                            [
                                             Max
                                             Unlimited ] | All Link | 𝐒𝐔𝐏𝐄𝐑 𝐅𝐀𝐒𝐓 𝐒𝐏𝐄𝐄𝐃 ⚡️</td>
                                         <td>2024-11-09</td>
                                         <td>Service enabled</td>
                                     </tr>
                                     <tr>
-                                        <td class="service-name"><span class="updtid">3559</span> Threads Likes | Cheapest +
+                                        <td class="service-name"><span class="updtid">3559</span> Threads Likes |
+                                            Cheapest +
                                             Slow</td>
                                         <td>2024-11-08</td>
                                         <td>Service disabled</td>
                                     </tr>
                                     <tr>
-                                        <td class="service-name"><span class="updtid">3396</span> Instagram Video Views [
+                                        <td class="service-name"><span class="updtid">3396</span> Instagram Video Views
+                                            [
                                             Max
                                             Unlimited ] | All Link | 𝐒𝐔𝐏𝐄𝐑 𝐅𝐀𝐒𝐓 𝐒𝐏𝐄𝐄𝐃 ⚡️</td>
                                         <td>2024-11-08</td>
                                         <td>Service disabled</td>
                                     </tr>
                                     <tr>
-                                        <td class="service-name"><span class="updtid">3559</span> Threads Likes | Cheapest +
+                                        <td class="service-name"><span class="updtid">3559</span> Threads Likes |
+                                            Cheapest +
                                             Slow</td>
                                         <td>2024-11-08</td>
                                         <td>Service enabled</td>
                                     </tr>
                                     <tr>
-                                        <td class="service-name"><span class="updtid">3396</span> Instagram Video Views [
+                                        <td class="service-name"><span class="updtid">3396</span> Instagram Video Views
+                                            [
                                             Max
                                             Unlimited ] | All Link | 𝐒𝐔𝐏𝐄𝐑 𝐅𝐀𝐒𝐓 𝐒𝐏𝐄𝐄𝐃 ⚡️</td>
                                         <td>2024-11-08</td>
                                         <td>Service enabled</td>
                                     </tr>
                                     <tr>
-                                        <td class="service-name"><span class="updtid">3559</span> Threads Likes | Cheapest +
+                                        <td class="service-name"><span class="updtid">3559</span> Threads Likes |
+                                            Cheapest +
                                             Slow</td>
                                         <td>2024-11-08</td>
                                         <td>Service disabled</td>
                                     </tr>
                                     <tr>
-                                        <td class="service-name"><span class="updtid">3396</span> Instagram Video Views [
+                                        <td class="service-name"><span class="updtid">3396</span> Instagram Video Views
+                                            [
                                             Max
                                             Unlimited ] | All Link | 𝐒𝐔𝐏𝐄𝐑 𝐅𝐀𝐒𝐓 𝐒𝐏𝐄𝐄𝐃 ⚡️</td>
                                         <td>2024-11-08</td>
@@ -704,45 +1019,52 @@
                                         <td>Service disabled</td>
                                     </tr>
                                     <tr>
-                                        <td class="service-name"><span class="updtid">3936</span> 🚫 Telegram Account Report
+                                        <td class="service-name"><span class="updtid">3936</span> 🚫 Telegram Account
+                                            Report
                                             |
                                             Real Accounts Spam | Speed: 1K/Day | No Refill</td>
                                         <td>2024-11-07</td>
                                         <td>Service enabled</td>
                                     </tr>
                                     <tr>
-                                        <td class="service-name"><span class="updtid">3937</span> 🚫 Telegram Channel Report
+                                        <td class="service-name"><span class="updtid">3937</span> 🚫 Telegram Channel
+                                            Report
                                             |
                                             Real Accounts Spam | Speed: 1K/Day | No Refill</td>
                                         <td>2024-11-07</td>
                                         <td>Service enabled</td>
                                     </tr>
                                     <tr>
-                                        <td class="service-name"><span class="updtid">3934</span> 🚫 Telegram Profile Report
+                                        <td class="service-name"><span class="updtid">3934</span> 🚫 Telegram Profile
+                                            Report
                                             Speed : 📍300-500/D - NoRefill -Real Accounts Spam ⛔</td>
                                         <td>2024-11-07</td>
                                         <td>Service enabled</td>
                                     </tr>
                                     <tr>
-                                        <td class="service-name"><span class="updtid">3935</span> 🚫 Telegram Group Report |
+                                        <td class="service-name"><span class="updtid">3935</span> 🚫 Telegram Group
+                                            Report |
                                             Speed : 📍300-500/D - NoRefill - Stable price ⛔</td>
                                         <td>2024-11-07</td>
                                         <td>Service enabled</td>
                                     </tr>
                                     <tr>
-                                        <td class="service-name"><span class="updtid">3933</span> 🚫 Telegram Group Report
+                                        <td class="service-name"><span class="updtid">3933</span> 🚫 Telegram Group
+                                            Report
                                             |Speed : 📍300-500/D - NoRefill - Real Accounts Spam ⛔</td>
                                         <td>2024-11-07</td>
                                         <td>Service enabled</td>
                                     </tr>
                                     <tr>
-                                        <td class="service-name"><span class="updtid">3913</span> 🚫 Facebook Post Report |
+                                        <td class="service-name"><span class="updtid">3913</span> 🚫 Facebook Post
+                                            Report |
                                             Speed : 📍300-500/D - NoRefill - Stable price ⛔</td>
                                         <td>2024-11-07</td>
                                         <td>Service enabled</td>
                                     </tr>
                                     <tr>
-                                        <td class="service-name"><span class="updtid">3927</span> 🚫 Twitter User Report |
+                                        <td class="service-name"><span class="updtid">3927</span> 🚫 Twitter User Report
+                                            |
                                             -Speed : 📍300-500/D - NoRefill - Real Accounts Spam⛔</td>
                                         <td>2024-11-07</td>
                                         <td>Service enabled</td>
@@ -762,7 +1084,8 @@
                                         <td>Service enabled</td>
                                     </tr>
                                     <tr>
-                                        <td class="service-name"><span class="updtid">3914</span> 🚫 Facebook Page Report |
+                                        <td class="service-name"><span class="updtid">3914</span> 🚫 Facebook Page
+                                            Report |
                                             Speed : 📍300-500/D - NoRefill - Stable price ⛔</td>
                                         <td>2024-11-07</td>
                                         <td>Service enabled</td>
@@ -775,40 +1098,46 @@
                                         <td>Service enabled</td>
                                     </tr>
                                     <tr>
-                                        <td class="service-name"><span class="updtid">3928</span> 🚫 Twitter Tweet Report
+                                        <td class="service-name"><span class="updtid">3928</span> 🚫 Twitter Tweet
+                                            Report
                                             |-Speed : 📍300-500/D - NoRefill - Real Accounts Spam ⛔</td>
                                         <td>2024-11-07</td>
                                         <td>Service enabled</td>
                                     </tr>
                                     <tr>
-                                        <td class="service-name"><span class="updtid">3915</span> 🚫 Facebook&nbsp;Report
+                                        <td class="service-name"><span class="updtid">3915</span> 🚫
+                                            Facebook&nbsp;Report
                                             Spam
                                             Account |Speed : 📍300-500/D - NoRefill - Stable price ⛔</td>
                                         <td>2024-11-07</td>
                                         <td>Service enabled</td>
                                     </tr>
                                     <tr>
-                                        <td class="service-name"><span class="updtid">3923</span> 🚫 YouTube Video Report |
+                                        <td class="service-name"><span class="updtid">3923</span> 🚫 YouTube Video
+                                            Report |
                                             Real
                                             Accounts Spam | Speed: 1K/Day | No Refill</td>
                                         <td>2024-11-07</td>
                                         <td>Service enabled</td>
                                     </tr>
                                     <tr>
-                                        <td class="service-name"><span class="updtid">3917</span> 🚫 Facebook&nbsp;Report
+                                        <td class="service-name"><span class="updtid">3917</span> 🚫
+                                            Facebook&nbsp;Report
                                             Spam
                                             Account | Super Fast Speed | Speed: 1K/Day | No Refill</td>
                                         <td>2024-11-07</td>
                                         <td>Service enabled</td>
                                     </tr>
                                     <tr>
-                                        <td class="service-name"><span class="updtid">3916</span> 🚫 Facebook Post Report |
+                                        <td class="service-name"><span class="updtid">3916</span> 🚫 Facebook Post
+                                            Report |
                                             Super Fast Speed | Speed: 1K/Day | No Refill</td>
                                         <td>2024-11-07</td>
                                         <td>Service enabled</td>
                                     </tr>
                                     <tr>
-                                        <td class="service-name"><span class="updtid">3918</span> 🚫 Facebook Page Report
+                                        <td class="service-name"><span class="updtid">3918</span> 🚫 Facebook Page
+                                            Report
                                             |Super
                                             Fast Speed | Speed: 1K/Day | No Refill</td>
                                         <td>2024-11-07</td>
@@ -822,7 +1151,8 @@
                                         <td>Service enabled</td>
                                     </tr>
                                     <tr>
-                                        <td class="service-name"><span class="updtid">3906</span> 🚫 Instagram Post Report |
+                                        <td class="service-name"><span class="updtid">3906</span> 🚫 Instagram Post
+                                            Report |
                                             Speed : 📍500/D - NoRefill - Stable price ⛔</td>
                                         <td>2024-11-07</td>
                                         <td>Service enabled</td>
@@ -835,26 +1165,30 @@
                                         <td>Service enabled</td>
                                     </tr>
                                     <tr>
-                                        <td class="service-name"><span class="updtid">3932</span> 🚫 Telegram Channel Report
+                                        <td class="service-name"><span class="updtid">3932</span> 🚫 Telegram Channel
+                                            Report
                                             |
                                             {Speed : Slow } | {No Refill} | 🔥</td>
                                         <td>2024-11-07</td>
                                         <td>Service enabled</td>
                                     </tr>
                                     <tr>
-                                        <td class="service-name"><span class="updtid">3908</span> 🚫 Instagram Post Report |
+                                        <td class="service-name"><span class="updtid">3908</span> 🚫 Instagram Post
+                                            Report |
                                             Super Fast Speed | Speed: 1K/Day | No Refill</td>
                                         <td>2024-11-07</td>
                                         <td>Service enabled</td>
                                     </tr>
                                     <tr>
-                                        <td class="service-name"><span class="updtid">3929</span> 🚫 Telegram Group Report |
+                                        <td class="service-name"><span class="updtid">3929</span> 🚫 Telegram Group
+                                            Report |
                                             {Speed : Slow } | {No Refill} | 🔥</td>
                                         <td>2024-11-07</td>
                                         <td>Service enabled</td>
                                     </tr>
                                     <tr>
-                                        <td class="service-name"><span class="updtid">3930</span> 🚫 Telegram Profile Report
+                                        <td class="service-name"><span class="updtid">3930</span> 🚫 Telegram Profile
+                                            Report
                                             |
                                             {Speed : Slow } | {No Refill} | 🔥</td>
                                         <td>2024-11-07</td>
@@ -868,28 +1202,32 @@
                                         <td>Service enabled</td>
                                     </tr>
                                     <tr>
-                                        <td class="service-name"><span class="updtid">3911</span> 🚫 Facebook Page Report |
+                                        <td class="service-name"><span class="updtid">3911</span> 🚫 Facebook Page
+                                            Report |
                                             MQ
                                             1M |{ Start : Instant} | {Speed : Slow } | {No Refill} | 🔥</td>
                                         <td>2024-11-07</td>
                                         <td>Service enabled</td>
                                     </tr>
                                     <tr>
-                                        <td class="service-name"><span class="updtid">3931</span> 🚫 Telegram Account Report
+                                        <td class="service-name"><span class="updtid">3931</span> 🚫 Telegram Account
+                                            Report
                                             |
                                             {Speed : Slow } | {No Refill} | 🔥</td>
                                         <td>2024-11-07</td>
                                         <td>Service enabled</td>
                                     </tr>
                                     <tr>
-                                        <td class="service-name"><span class="updtid">3912</span> 🚫 Facebook&nbsp;Report
+                                        <td class="service-name"><span class="updtid">3912</span> 🚫
+                                            Facebook&nbsp;Report
                                             Spam
                                             Account | { Start : Instant} | {Speed : Slow } | {No Refill} | 🔥</td>
                                         <td>2024-11-07</td>
                                         <td>Service enabled</td>
                                     </tr>
                                     <tr>
-                                        <td class="service-name"><span class="updtid">3926</span> 🚫 Twitter Tweet Report |
+                                        <td class="service-name"><span class="updtid">3926</span> 🚫 Twitter Tweet
+                                            Report |
                                             Start : Instant} | {Speed : Slow } | {No Refill} | 🔥</td>
                                         <td>2024-11-07</td>
                                         <td>Service enabled</td>
@@ -901,7 +1239,8 @@
                                         <td>Service enabled</td>
                                     </tr>
                                     <tr>
-                                        <td class="service-name"><span class="updtid">3910</span> 🚫 Facebook Post Report |{
+                                        <td class="service-name"><span class="updtid">3910</span> 🚫 Facebook Post
+                                            Report |{
                                             Start : Instant} | {Speed : Slow } | {No Refill} | 🔥</td>
                                         <td>2024-11-07</td>
                                         <td>Service enabled</td>
@@ -914,46 +1253,53 @@
                                         <td>Service enabled</td>
                                     </tr>
                                     <tr>
-                                        <td class="service-name"><span class="updtid">3925</span> 🚫 Twitter User Report |
+                                        <td class="service-name"><span class="updtid">3925</span> 🚫 Twitter User Report
+                                            |
                                             Start
                                             : Instant} | {Speed : Slow } | {No Refill} | 🔥</td>
                                         <td>2024-11-07</td>
                                         <td>Service enabled</td>
                                     </tr>
                                     <tr>
-                                        <td class="service-name"><span class="updtid">3937</span> 🚫 Telegram Channel Report
+                                        <td class="service-name"><span class="updtid">3937</span> 🚫 Telegram Channel
+                                            Report
                                             |
                                             Real Accounts Spam | Speed: 1K/Day | No Refill</td>
                                         <td>2024-11-07</td>
                                         <td>Service disabled</td>
                                     </tr>
                                     <tr>
-                                        <td class="service-name"><span class="updtid">3935</span> 🚫 Telegram Group Report |
+                                        <td class="service-name"><span class="updtid">3935</span> 🚫 Telegram Group
+                                            Report |
                                             Speed : 📍300-500/D - NoRefill - Stable price ⛔</td>
                                         <td>2024-11-07</td>
                                         <td>Service disabled</td>
                                     </tr>
                                     <tr>
-                                        <td class="service-name"><span class="updtid">3936</span> 🚫 Telegram Account Report
+                                        <td class="service-name"><span class="updtid">3936</span> 🚫 Telegram Account
+                                            Report
                                             |
                                             Real Accounts Spam | Speed: 1K/Day | No Refill</td>
                                         <td>2024-11-07</td>
                                         <td>Service disabled</td>
                                     </tr>
                                     <tr>
-                                        <td class="service-name"><span class="updtid">3934</span> 🚫 Telegram Profile Report
+                                        <td class="service-name"><span class="updtid">3934</span> 🚫 Telegram Profile
+                                            Report
                                             Speed : 📍300-500/D - NoRefill -Real Accounts Spam ⛔</td>
                                         <td>2024-11-07</td>
                                         <td>Service disabled</td>
                                     </tr>
                                     <tr>
-                                        <td class="service-name"><span class="updtid">3927</span> 🚫 Twitter User Report |
+                                        <td class="service-name"><span class="updtid">3927</span> 🚫 Twitter User Report
+                                            |
                                             -Speed : 📍300-500/D - NoRefill - Real Accounts Spam⛔</td>
                                         <td>2024-11-07</td>
                                         <td>Service disabled</td>
                                     </tr>
                                     <tr>
-                                        <td class="service-name"><span class="updtid">3933</span> 🚫 Telegram Group Report
+                                        <td class="service-name"><span class="updtid">3933</span> 🚫 Telegram Group
+                                            Report
                                             |Speed : 📍300-500/D - NoRefill - Real Accounts Spam ⛔</td>
                                         <td>2024-11-07</td>
                                         <td>Service disabled</td>
@@ -973,45 +1319,52 @@
                                         <td>Service disabled</td>
                                     </tr>
                                     <tr>
-                                        <td class="service-name"><span class="updtid">3928</span> 🚫 Twitter Tweet Report
+                                        <td class="service-name"><span class="updtid">3928</span> 🚫 Twitter Tweet
+                                            Report
                                             |-Speed : 📍300-500/D - NoRefill - Real Accounts Spam ⛔</td>
                                         <td>2024-11-07</td>
                                         <td>Service disabled</td>
                                     </tr>
                                     <tr>
-                                        <td class="service-name"><span class="updtid">3923</span> 🚫 YouTube Video Report |
+                                        <td class="service-name"><span class="updtid">3923</span> 🚫 YouTube Video
+                                            Report |
                                             Real
                                             Accounts Spam | Speed: 1K/Day | No Refill</td>
                                         <td>2024-11-07</td>
                                         <td>Service disabled</td>
                                     </tr>
                                     <tr>
-                                        <td class="service-name"><span class="updtid">3918</span> 🚫 Facebook Page Report
+                                        <td class="service-name"><span class="updtid">3918</span> 🚫 Facebook Page
+                                            Report
                                             |Super
                                             Fast Speed | Speed: 1K/Day | No Refill</td>
                                         <td>2024-11-07</td>
                                         <td>Service disabled</td>
                                     </tr>
                                     <tr>
-                                        <td class="service-name"><span class="updtid">3914</span> 🚫 Facebook Page Report |
+                                        <td class="service-name"><span class="updtid">3914</span> 🚫 Facebook Page
+                                            Report |
                                             Speed : 📍300-500/D - NoRefill - Stable price ⛔</td>
                                         <td>2024-11-07</td>
                                         <td>Service disabled</td>
                                     </tr>
                                     <tr>
-                                        <td class="service-name"><span class="updtid">3916</span> 🚫 Facebook Post Report |
+                                        <td class="service-name"><span class="updtid">3916</span> 🚫 Facebook Post
+                                            Report |
                                             Super Fast Speed | Speed: 1K/Day | No Refill</td>
                                         <td>2024-11-07</td>
                                         <td>Service disabled</td>
                                     </tr>
                                     <tr>
-                                        <td class="service-name"><span class="updtid">3913</span> 🚫 Facebook Post Report |
+                                        <td class="service-name"><span class="updtid">3913</span> 🚫 Facebook Post
+                                            Report |
                                             Speed : 📍300-500/D - NoRefill - Stable price ⛔</td>
                                         <td>2024-11-07</td>
                                         <td>Service disabled</td>
                                     </tr>
                                     <tr>
-                                        <td class="service-name"><span class="updtid">3915</span> 🚫 Facebook&nbsp;Report
+                                        <td class="service-name"><span class="updtid">3915</span> 🚫
+                                            Facebook&nbsp;Report
                                             Spam
                                             Account |Speed : 📍300-500/D - NoRefill - Stable price ⛔</td>
                                         <td>2024-11-07</td>
@@ -1032,14 +1385,16 @@
                                         <td>Service disabled</td>
                                     </tr>
                                     <tr>
-                                        <td class="service-name"><span class="updtid">3917</span> 🚫 Facebook&nbsp;Report
+                                        <td class="service-name"><span class="updtid">3917</span> 🚫
+                                            Facebook&nbsp;Report
                                             Spam
                                             Account | Super Fast Speed | Speed: 1K/Day | No Refill</td>
                                         <td>2024-11-07</td>
                                         <td>Service disabled</td>
                                     </tr>
                                     <tr>
-                                        <td class="service-name"><span class="updtid">3906</span> 🚫 Instagram Post Report |
+                                        <td class="service-name"><span class="updtid">3906</span> 🚫 Instagram Post
+                                            Report |
                                             Speed : 📍500/D - NoRefill - Stable price ⛔</td>
                                         <td>2024-11-07</td>
                                         <td>Service disabled</td>
@@ -1052,19 +1407,22 @@
                                         <td>Service disabled</td>
                                     </tr>
                                     <tr>
-                                        <td class="service-name"><span class="updtid">3908</span> 🚫 Instagram Post Report |
+                                        <td class="service-name"><span class="updtid">3908</span> 🚫 Instagram Post
+                                            Report |
                                             Super Fast Speed | Speed: 1K/Day | No Refill</td>
                                         <td>2024-11-07</td>
                                         <td>Service disabled</td>
                                     </tr>
                                     <tr>
-                                        <td class="service-name"><span class="updtid">3929</span> 🚫 Telegram Group Report |
+                                        <td class="service-name"><span class="updtid">3929</span> 🚫 Telegram Group
+                                            Report |
                                             {Speed : Slow } | {No Refill} | 🔥</td>
                                         <td>2024-11-07</td>
                                         <td>Service disabled</td>
                                     </tr>
                                     <tr>
-                                        <td class="service-name"><span class="updtid">3930</span> 🚫 Telegram Profile Report
+                                        <td class="service-name"><span class="updtid">3930</span> 🚫 Telegram Profile
+                                            Report
                                             |
                                             {Speed : Slow } | {No Refill} | 🔥</td>
                                         <td>2024-11-07</td>
@@ -1217,4 +1575,5 @@
         }
     </script>
 </body>
+
 </html>

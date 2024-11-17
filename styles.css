@@ -338,7 +338,7 @@ form {
 .form-group {
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: 8px;
     margin-bottom: 15px;
 }
 
@@ -374,6 +374,10 @@ form label {
     border-color: #b38cff;
     outline: 0;
     box-shadow: 0 0 0 0.25rem rgb(239 235 248);
+}
+
+.form-input:disabled {
+    background: #e9ecef;
 }
 
 .alert {
