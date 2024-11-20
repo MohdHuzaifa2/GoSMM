@@ -21,6 +21,10 @@ body {
     background-attachment: fixed;
 }
 
+body:has(.modal-container.show) {
+    overflow: hidden;
+}
+
 .navbar {
     padding: 10px;
     margin: 10px;
@@ -124,6 +128,7 @@ body {
 
 .navbar .nav-link, .navbar .nav-link:active, .navbar .nav-link:visited {
     display: block;
+    font-size: 15px;
     padding: 8px 4px;
     color: #ffffff;
 }
@@ -248,6 +253,104 @@ ul.dropdown-menu {
 .dropdown-item:hover, .dropdown-item:focus {
     color: #1e2125;
     background: #e9ecef;
+}
+
+.modal-container {
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    inset: 0;
+    z-index: 100;
+    background: rgba(0, 0, 0, 0.3);
+    opacity: 0;
+    padding: 10px;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+    will-change: opacity;
+}
+
+.modal-container.show {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.modal-container .modal {
+    margin: 20px auto;
+    max-width: 500px;
+    background: white;
+    border-radius: 15px;
+    transition: transform 0.3s ease-out;
+    transform: translate(0, -50px);
+}
+
+.modal-container.show .modal {
+    transform: none;
+}
+
+.modal-header {
+    padding: 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #dee2e6;
+}
+
+.modal-header h2.modal-title {
+    font-size: 20px;
+    font-weight: 500;
+}
+
+.modal-header .btn-close {
+    border: none;
+    outline: none;
+    padding: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: transparent;
+    cursor: pointer;
+}
+
+.modal-body {
+    padding: 16px;
+    border-bottom: 1px solid #dee2e6;
+}
+
+.modal-change-currency ul.currencies-list {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 16px;
+}
+
+.modal-change-currency ul.currencies-list li a.currencies-item {
+    text-decoration: none;
+    background: var(--primary-color);
+    color: white;
+    border-radius: 20px;
+    display: inline-block;
+    padding-right: 12px;
+    vertical-align: middle;
+    font-size: 15px;
+}
+
+.modal-change-currency ul.currencies-list li a.currencies-item span {
+    background: white;
+    color: #000;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 30px;
+    height: 30px;
+    border-radius: 20px;
+    margin: 4px;
+}
+
+.modal-footer {
+    padding: 16px;
+    display: flex;
+    justify-content: flex-end;
 }
 
 main {

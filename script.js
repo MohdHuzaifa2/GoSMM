@@ -38,3 +38,18 @@ if (dropdownToggle && dropdownMenu) {
     dropdownMenu.classList.toggle("show");
   });
 }
+
+function openModal(id) {
+  let modalContainer = document.querySelector(id);
+  let btnClose = modalContainer.querySelector(".modal-header .btn-close");
+
+  if(modalContainer) {
+    modalContainer.classList.add("show");
+  }
+  
+  if(btnClose) {
+    btnClose.addEventListener('click', () => {
+      modalContainer.classList.remove("show");
+    })
+  }
+}
