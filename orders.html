@@ -232,7 +232,7 @@
         <div class="userwrap">
             <section class="col">
                 <div class="card">
-                    <ul class="nav-pills">
+                    <ul class="nav-pills" id="status-filter-pills">
                         <li class="nav-item">
                             <a class="nav-link ordstatbadge active" href="./orders.html">All</a>
                         </li>
@@ -2491,6 +2491,19 @@
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
     <script src="./script.js"></script>
+    <script>
+        let ul = document.querySelector('#status-filter-pills');
+        let listItems = ul.querySelectorAll("li");
+
+        listItems.forEach(li => {
+            li.addEventListener("click", () => {
+                listItems.forEach(item => {
+                    item.querySelector("a").classList.remove("active");
+                });
+                li.querySelector("a").classList.add("active");
+            })
+        })
+    </script>
 </body>
 
 </html>
